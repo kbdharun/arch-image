@@ -22,5 +22,5 @@ stages:
         url: https://github.com/Jguer/yay/releases/download/v12.3.5/yay_12.3.5_x86_64.tar.gz
       commands:
         - mkdir -p /usr/bin
-        - mv sources/yay_12.3.5_x86_64/yay /usr/bin/
+        - cp sources/yay_12.3.5_x86_64/yay /usr/bin/yay
         - chmod +x /usr/bin/yay
