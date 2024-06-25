@@ -10,17 +10,7 @@ stages:
     - pacman -Syu --noconfirm
   entrypoint: ["/etc/init.sh"]
   modules:
-    - name: install-yay-deps
+    - name: install-essentials
       type: shell
       commands:
       - pacman -S --needed git wget base-devel --noconfirm
-
-    - name: install-yay
-      type: shell
-      source:
-        type: tar
-        url: https://github.com/Jguer/yay/releases/download/v12.3.5/yay_12.3.5_x86_64.tar.gz
-      commands:
-        - mkdir -p /usr/bin
-        - cp /sources/install-yay/yay /usr/bin/yay
-        - chmod +x /usr/bin/yay
