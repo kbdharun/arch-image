@@ -14,6 +14,8 @@ stages:
       type: shell
       source:
         type: git
+        branch: master
+        commit: latest
         url: https://aur.archlinux.org/yay-bin.git
       commands:
       - pacman -S --needed git base-devel
