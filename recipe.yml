@@ -1,0 +1,20 @@
+name: Arch Linux Multilib
+id: arch-multilib
+stages:
+- id: build
+  base: ghcr.io/archlinux/archlinux:multilib-devel
+  singlelayer: false
+  labels:
+    maintainer: Vanilla OS Contributors
+  runs:
+    - pacman -Syu --noconfirm
+  entrypoint: ["/etc/init.sh"]
+  modules:
+    - name: install-yay
+      type: shell
+      source:
+        type: git
+        url: https://aur.archlinux.org/yay-bin.git
+      commands:
+      - pacman -S --needed git base-devel
+      - makepkg -si
