@@ -22,4 +22,4 @@ stages:
         url: https://github.com/Jguer/yay/releases/download/v12.3.5/yay_12.3.5_x86_64.tar.gz
       commands:
       - tar -xf ./yay_12.3.5_x86_64.tar.gz
-      - mv ./yay_12.3.5_x86_64/yay /usr/bin/build-yay
+      - mv ./yay_12.3.5_x86_64/yay /usr/bin/
