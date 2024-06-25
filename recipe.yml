@@ -10,13 +10,16 @@ stages:
     - pacman -Syu --noconfirm
   entrypoint: ["/etc/init.sh"]
   modules:
+    - name: install-yay-deps
+      type: shell
+      commands:
+      - pacman -S --needed git wget base-devel --noconfirm
+
     - name: install-yay
       type: shell
       source:
-        type: git
-        branch: master
-        commit: latest
-        url: https://aur.archlinux.org/yay-bin.git
+        type: tar
+        url: https://github.com/Jguer/yay/releases/tag/v12.3.5
       commands:
-      - pacman -S --needed git base-devel --noconfirm
-      - makepkg -si
+      - tar -xf ./yay_12.3.5_x86_64.tar.gz
+      - mv ./yay_12.3.5_x86_64/yay /usr/bin/build-yay
