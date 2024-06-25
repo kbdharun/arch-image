@@ -18,5 +18,5 @@ stages:
         commit: latest
         url: https://aur.archlinux.org/yay-bin.git
       commands:
-      - pacman -S --needed git base-devel
+      - pacman -S --needed git base-devel --noconfirm
       - makepkg -si
